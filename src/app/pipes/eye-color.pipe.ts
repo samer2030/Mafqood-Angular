@@ -8,15 +8,15 @@ export class EyeColorPipe implements PipeTransform {
 
   transform(value: EyeColor, language: string | null = null): string | undefined {
     const eyeColorMap = [
-      { value: EyeColor.Brown, ar: 'البني', en: 'Brown' },
-      { value: EyeColor.Blue, ar: 'الأزرق', en: 'Blue' },
-      { value: EyeColor.Green, ar: 'الأخضر', en: 'Green' },
-      { value: EyeColor.Gray, ar: 'الرمادي', en: 'Gray' },
-      { value: EyeColor.Red, ar: 'الأحمر', en: 'Red' },
-      { value: EyeColor.Violet, ar: 'البنفسجي', en: 'Violet' },
-      { value: EyeColor.Black, ar: 'الأسود', en: 'Black' },
-      { value: EyeColor.Multicolored, ar: 'متعدد الألوان', en: 'Multicolored' },
-      { value: EyeColor.Other, ar: 'آخر', en: 'Other' }
+      { value: EyeColor.Brown, ar: 'البني', en: 'brown' },
+      { value: EyeColor.Blue, ar: 'الأزرق', en: 'blue' },
+      { value: EyeColor.Green, ar: 'الأخضر', en: 'green' },
+      { value: EyeColor.Gray, ar: 'الرمادي', en: 'gray' },
+      { value: EyeColor.Red, ar: 'الأحمر', en: 'red' },
+      { value: EyeColor.Violet, ar: 'البنفسجي', en: 'violet' },
+      { value: EyeColor.Black, ar: 'الأسود', en: 'black' },
+      { value: EyeColor.Multicolored, ar: 'متعدد الألوان', en: 'multicolored' },
+      { value: EyeColor.Other, ar: 'آخر', en: 'other' }
     ]
     return language == "en" ? eyeColorMap.find(h => h.value == value)?.en : eyeColorMap.find(h => h.value == value)?.ar;
   }
