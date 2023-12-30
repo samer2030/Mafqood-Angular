@@ -1,10 +1,11 @@
-<div class="d-flex">
+<h1>Testing</h1>
+<div class="d-flex justify-content-between" *ngIf="report">
   <p>Test</p>
-  <carousel>
-    <ng-container *ngFor="let attachment of Report?.attachments">
+  <carousel class="w-50" (activeSlideChange)="false" [interval]="0">
+    <ng-container *ngFor="let attachment of report.attachments">
       <slide>
-        <img src="assets/images/nature/1.jpg" alt="first slide" style="display: block; width: 100%;">
+        <img [src]="_reportService.getAttachmentPath(attachment)" [alt]="report.name || (report.gender | gender) ">
       </slide>
     </ng-container>
-    </carousel>
+  </carousel>
 </div>

@@ -7,3 +7,16 @@
     --secondary-text-color: #fff;
     --secondary-element-color: #242526;
 }
+img{
+    max-width: 100%;
+}
+
+.carousel-control{ 
+    background-color: rgba(0, 0, 0,0.3) !important;
+    width: 30px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+.carousel-control:hover{
+    background-color: rgba(0, 0, 0,0.6) !important;
+    width: 40px !important;
+}

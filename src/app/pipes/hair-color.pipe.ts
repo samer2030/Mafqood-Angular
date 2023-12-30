@@ -3,7 +3,6 @@ import { HairColor } from '../enums/hair-color.enum';
 
 @Pipe({
   name: 'hairColor',
-  standalone: true
 })
 export class HairColorPipe implements PipeTransform {
 

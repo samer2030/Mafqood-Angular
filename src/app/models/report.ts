@@ -24,7 +24,7 @@ export interface IReport {
     maxAge?: number;
     street?: string;
     district?: string;
-    dateTime: Date;
+    dateTime: string;
     contactNumber: string;
     additionalInfo?: string;
     valid: boolean;
