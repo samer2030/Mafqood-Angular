@@ -1,11 +1,45 @@
-<h1>Testing</h1>
-<div class="d-flex justify-content-between" *ngIf="report">
-  <p>Test</p>
-  <carousel class="w-50" (activeSlideChange)="false" [interval]="0">
+<div class="d-flex align-items-center" *ngIf="report">
+  <carousel class="w-50 rounded-2" (activeSlideChange)="false" [interval]="0" [showIndicators]="false" #myCarousel>
     <ng-container *ngFor="let attachment of report.attachments">
       <slide>
-        <img [src]="_reportService.getAttachmentPath(attachment)" [alt]="report.name || (report.gender | gender) ">
+        <img [src]="_reportService.getAttachmentPath(attachment)" [alt]="report.name || (report.gender | gender)">
       </slide>
     </ng-container>
   </carousel>
+  <div class="card w-50">
+    <div class="card-header">
+      <h4 class="card-title">تقرير عن شخص مفقود</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>التفاصيل الشخصية</h5>
+          <p>الاسم: {{ report.name }}</p>
+          <p>الجنس: {{ report.gender === 1 ? 'ذكر' : 'أنثى' }}</p>
+          <p>الفئة العمرية: {{ report.minAge }} - {{ report.maxAge }}</p>
+          <!-- Add more details as needed -->
+        </div>
+        <div class="col-md-6">
+          <h5>المكان</h5>
+          <p>الشارع: {{ report.street }}</p>
+          <p>الحي: {{ report.district }}</p>
+          <p>المدينة: {{ report.city.nameAr }}</p>
+          <p>المحافظة: {{ report.city.governorate.nameAr }}</p>
+          <p>رقم الاتصال: {{ report.contactNumber }}</p>
+        </div>
+      </div>
+      <hr>
+      <h5>معلومات إضافية:</h5>
+      <p>{{ report.additionalInfo }}</p>
+      <hr>
+      <h5>المرفقات:</h5>
+      <div class="d-flex indicators">
+            <button class="btn" *ngFor="let attachment of report.attachments; let i = index" 
+                    [class.active]="i === myCarousel.activeSlide"
+                    (click)="myCarousel.selectSlide(i)">
+              <img [src]="_reportService.getAttachmentPath(attachment)" alt="slide {{i}}" />
+            </button>
+      </div>
+    </div>
+  </div>
 </div>
