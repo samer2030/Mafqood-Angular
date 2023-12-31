@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { AddReportComponent } from './components/add-report/add-report.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,7 +43,9 @@ import { AddReportComponent } from './components/add-report/add-report.component
     LoadingBarRouterModule,
     CarouselModule,
     AppRoutingModule,
-    ToastrModule
+    ToastrModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
 
