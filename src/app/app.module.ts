@@ -43,8 +43,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoadingBarRouterModule,
     CarouselModule,
     AppRoutingModule,
-    ToastrModule,
-    FormsModule,
+    ToastrModule.forRoot({
+      "titleClass": "text-white",
+      "messageClass": "text-white",
+      "positionClass": 'toast-bottom-right',
+      timeOut: 5000,
+      preventDuplicates: false,
+      progressBar: true,
+      closeButton: true,
+      enableHtml: true,
+    }), FormsModule,
     ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
