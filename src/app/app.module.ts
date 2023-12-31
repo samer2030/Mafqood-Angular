@@ -17,12 +17,14 @@ import { ReportComponent } from './components/report/report.component';
 import { AppRoutingModule } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
+import { AddReportComponent } from './components/add-report/add-report.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportComponent,
+    AddReportComponent,
     EyeColorPipe,
     GenderPipe,
     HairColorPipe,
